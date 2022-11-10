@@ -108,4 +108,40 @@ int main()
     cout << "What is the country that you will visit? (Germany - 1; France - 2; Poland - 3; Spain - 4; Italy - 5; Czech Republic - 6; Greece - 7; Romania - 8)" << endl;
     cout << "Enter the number of the country: ";
     cin >> choice;
+
+	switch (choice)
+	{
+		case 1:
+		{
+			cout << "Welcome to Germany!";
+		}
+		case 2:
+		{
+			cout << "Welcome to France!";
+		}
+		case 3:
+		{
+			cout << "Welcome to Poland!";
+		}
+		case 4:
+		{
+			cout << "Welcome to Spain!";
+		}
+		case 5:
+		{
+			cout << "Welcome to Italy!";
+		}
+		case 6:
+		{
+			cout << "Welcome to Czech Republic!";
+		}
+		case 7:
+		{
+			cout << "Welcome to Greece!";
+		}
+		case 8:
+		{
+			cout << "Welcome to Romania!";
+		}
+	}
 }
