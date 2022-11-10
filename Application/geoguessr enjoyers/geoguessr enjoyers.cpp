@@ -78,4 +78,34 @@ void mainMenu()
 int main()
 {
 	mainMenu();
+
+	string name;
+    int choice;
+    int money;
+
+    cout << "Hello, player! Please enter your name below!" << endl;
+
+    cin >> name;
+
+    cout << "Nice to meet you, " << name << "!" << endl;
+    cout << "Hope you have fun while playing this!" << endl << endl;
+    cout << "Press enter to continue";
+    Sleep(1000);
+    system("cls");
+
+    cout << "After saving up enough money, you decide to explore different countries in Europe." << endl;
+    Sleep(1000);
+    cout << "You will visit some of the most popular monuments in the country and you will be asked a question for the following monument." << endl;
+    Sleep(1000);
+    cout << "Answer it right and you will get points. If you manage to answer the second question (it is going to be a difficult one), you will get bonus points." << endl;
+    Sleep(1000);
+    cout << "Try to achieve the most points and win." << endl << endl;
+    cout << "Press enter to continue";
+    Sleep(1000);
+    system("cls");
+
+    cout << "Your starting point is Bulgaria." << endl;
+    cout << "What is the country that you will visit? (Germany - 1; France - 2; Poland - 3; Spain - 4; Italy - 5; Czech Republic - 6; Greece - 7; Romania - 8)" << endl;
+    cout << "Enter the number of the country: ";
+    cin >> choice;
 }
