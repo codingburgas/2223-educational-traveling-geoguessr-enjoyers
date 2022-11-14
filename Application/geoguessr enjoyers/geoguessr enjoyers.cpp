@@ -82,12 +82,15 @@ void game()
 {
 	string name;
 	int choice;
-	int money;
+	int money = 20;
+	int score = 0;
 	
 	cout << "Hello, player! Please enter your name below!" << endl << endl;
 	
 	cin >> name;
 	cout << endl;
+
+	system("cls");
 
 	cout << "Nice to meet you, " << name << "!" << endl;
 	cout << "Hope you have fun while playing this!" << endl << endl;
@@ -95,14 +98,16 @@ void game()
 
 	Sleep(1000);
 
-	 int key = _getch();
-	 system("cls");
+	int key = _getch();
+	system("cls");
 
-	cout << "After saving up enough money, you decide to explore different countries in Europe." << endl;
+	cout << "After saving up enough money, you decide to explore different countries in Europe." << endl << endl;
 	Sleep(1000);
-	cout << "You will visit some of the most popular monuments in the country and you will be asked a question for the following monument." << endl;
+	cout << "You will visit some of the most popular monuments in the country and " << endl; 
+	cout << "you will be asked historical and geographical questions about the country." << endl << endl;
 	Sleep(1000);
-	cout << "Answer it right and you will get points. If you manage to answer the second question (it is going to be a difficult one), you will get bonus points." << endl;
+	cout << "Answer it right and you will get points. If you manage to answer the " << endl;
+	cout << "third question(it is going to be a difficult one), you will get bonus points." << endl << endl;
 	Sleep(1000);
 	cout << "Try to achieve the most points and win." << endl << endl;
 	cout << "Press enter to continue";
@@ -113,7 +118,10 @@ void game()
 
 	cout << "Your starting point is Bulgaria." << endl << endl;
 	
-	cout << "Which country will you visit? (Germany - 1; France - 2; Poland - 3; Spain - 4; Italy - 5; Czech Republic - 6; Greece - 7; Romania - 8)" << endl;
+	cout << "Which country will you visit?" << endl << endl;
+	cout << "1. Germany  4. Spain    7. Greece" << endl << endl;
+	cout << "2. France   5. Italy    8. Romania" << endl << endl;
+	cout << "3. Poland   6. Czech Republic" << endl << endl;
 	cout << "Enter the number of the country: ";
 
 	cin >> choice;
@@ -125,10 +133,15 @@ void game()
 		germany();
 
 		cout << "You arrive in Berlin, eager to begin your trip around Europe. Here's the first question!" << endl << endl;
+		cout << "Continue" << endl;
+
+		key = _getch();
+		system("cls");
+
 		cout << "What currency is used in Germany?" << endl;
 
 		cout << R"(
-			  _______________
+	     _______________
            _(               ),     ______________   ___________
           (_   A: Euro       _)    _\  B: Lev    _\ (_          )_
             (_______________)_    \_____________\    (_ C: Krone  )_
@@ -139,7 +152,64 @@ void game()
 
 		if (key == 'A' || key == 'a')
 		{
+			money += 10;
+			score += 100;
+
 			cout << "Correct!";
+
+			Sleep(1000);
+			system("cls");
+
+			cout << "Nice one! But can you get this one right?" << endl << endl;
+			cout << "What is the capital of Germany?" << endl;
+
+			cout << R"(
+	     _______________
+           _(               ),     ______________   ___________
+          (_   A: Hamburg    _)   _\  B: Berlin  _\ (_          )_
+            (_______________)_    \_____________\    (_ C: Bremen )_
+                            (_)             (_         (___________)
+		)" << '\n';
+
+			key = _getch();
+
+			if (key == 'B' || key == 'b')
+			{
+				money += 10;
+				score += 200;
+
+				cout << "Correct!";
+
+				Sleep(1000);
+				system("cls");
+
+				cout << "Here's a bonus question! Good luck!" << endl << endl;
+				cout << "Which treaty included a war guilt clause that deemed Germany the aggressor in World War I " << endl;
+				cout << "and required it to make reparations ? " << endl;
+
+				cout << R"(
+	     _______________
+           _(               ),     ______________   ___________
+          (_   A: Versailles _)    _\  B: Riga  _\  (_          )_
+            (_______________)_    \_____________\    (_ C:Paris  )_
+                            (_)             (_         (___________)
+
+				
+		)" << '\n';
+
+				key = _getch();
+
+				if (key == 'A' || key == 'a')
+				{
+					money += 20;
+					score += 400;
+
+					cout << "Correct!";
+
+					Sleep(1000);
+					system("cls");
+				}
+			}
 		}
 	}
 	else if (choice == 2)
