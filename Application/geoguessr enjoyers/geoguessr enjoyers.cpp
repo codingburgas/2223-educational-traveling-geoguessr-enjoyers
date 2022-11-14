@@ -12,6 +12,8 @@
 #include "header/germany.h"
 #include "header/eiffelTower.h"
 #include "header/bulgaria.h"
+#include "header/germanyQuestion1.h"
+#include "header/germanyQuestion2.h"
 
 using namespace std;
 
@@ -82,8 +84,9 @@ void game()
 {
 	string name;
 	int choice;
-	int money = 20;
+	int money = 200;
 	int score = 0;
+	float multiplier = 0;
 	
 	cout << "Hello, player! Please enter your name below!" << endl << endl;
 	
@@ -107,7 +110,7 @@ void game()
 	cout << "you will be asked historical and geographical questions about the country." << endl << endl;
 	Sleep(1000);
 	cout << "Answer it right and you will get points. If you manage to answer the " << endl;
-	cout << "third question(it is going to be a difficult one), you will get bonus points." << endl << endl;
+	cout << "second question(it is going to be a difficult one), you will get bonus points." << endl << endl;
 	Sleep(1000);
 	cout << "Try to achieve the most points and win." << endl << endl;
 	cout << "Press enter to continue";
@@ -117,132 +120,100 @@ void game()
 	system("cls");
 
 	cout << "Your starting point is Bulgaria." << endl << endl;
-	
-	cout << "Which country will you visit?" << endl << endl;
-	cout << "1. Germany  4. Spain    7. Greece" << endl << endl;
-	cout << "2. France   5. Italy    8. Romania" << endl << endl;
-	cout << "3. Poland   6. Czech Republic" << endl << endl;
-	cout << "Enter the number of the country: ";
+	cout << "Your first destination is Germany. How are you going to get there?" << endl << endl;
+	cout << "1. Train(100$ 1.5x score)   2. Car (150$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+	cout << "Your balance: " << money << endl;
 
 	cin >> choice;
-	system("cls");
 
 	if (choice == 1)
 	{
-		cout << "Welcome to Germany!";
-		germany();
+		multiplier += 1.5;
+	}
+	else if (choice == 2)
+	{
+		multiplier += 2;
+	}
+	else if (choice == 3)
+	{
+		multiplier += 1;
+	}
 
-		cout << "You arrive in Berlin, eager to begin your trip around Europe. Here's the first question!" << endl << endl;
-		cout << "Continue" << endl;
+	system("cls");
 
-		key = _getch();
+	cout << "Welcome to Germany!";
+	germany();
+
+	cout << "You arrive in Berlin, eager to begin your trip around Europe. Here's the first question!" << endl << endl;
+	cout << "Continue" << endl;
+
+	key = _getch();
+	system("cls");
+
+	germanyQuestion1();
+
+	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+	key = _getch();
+
+	if (key == 'A' || key == 'a')
+	{
+		money += 10;
+		score += 100;
+
+		cout << "Correct!";
+
+		Sleep(1000);
 		system("cls");
 
-		cout << "What currency is used in Germany?" << endl;
+		cout << "Nice one! But can you get this bonus question right?" << endl << endl;
+			
+		germanyQuestion2();
 
-		cout << R"(
-	     _______________
-           _(               ),     ______________   ___________
-          (_   A: Euro       _)    _\  B: Lev    _\ (_          )_
-            (_______________)_    \_____________\    (_ C: Krone  )_
-                            (_)             (_         (___________)
-		)" << '\n';
+		cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
 
 		key = _getch();
 
 		if (key == 'A' || key == 'a')
 		{
-			money += 10;
-			score += 100;
+			money += 20;
+			score += 400;
 
 			cout << "Correct!";
 
 			Sleep(1000);
 			system("cls");
+		}
+			
+	}
+	else
+	{
+		cout << "Wrong!";
 
-			cout << "Nice one! But can you get this one right?" << endl << endl;
-			cout << "What is the capital of Germany?" << endl;
+		Sleep(1000);
+		system("cls");
 
-			cout << R"(
-	     _______________
-           _(               ),     ______________   ___________
-          (_   A: Hamburg    _)   _\  B: Berlin  _\ (_          )_
-            (_______________)_    \_____________\    (_ C: Bremen )_
-                            (_)             (_         (___________)
-		)" << '\n';
+		cout << "Oof. That's okay, try this one!" << endl << endl;
+			
+		germanyQuestion2();
 
-			key = _getch();
+		key = _getch();
 
-			if (key == 'B' || key == 'b')
-			{
-				money += 10;
-				score += 200;
+		if (key == 'A' || key == 'a')
+		{
+			money += 20;
+			score += 400;
 
-				cout << "Correct!";
+			cout << "Correct!";
 
-				Sleep(1000);
-				system("cls");
-
-				cout << "Here's a bonus question! Good luck!" << endl << endl;
-				cout << "Which treaty included a war guilt clause that deemed Germany the aggressor in World War I " << endl;
-				cout << "and required it to make reparations ? " << endl;
-
-				cout << R"(
-	     _______________
-           _(               ),     ______________   ___________
-          (_   A: Versailles _)    _\  B: Riga  _\  (_          )_
-            (_______________)_    \_____________\    (_ C:Paris  )_
-                            (_)             (_         (___________)
-
-				
-		)" << '\n';
-
-				key = _getch();
-
-				if (key == 'A' || key == 'a')
-				{
-					money += 20;
-					score += 400;
-
-					cout << "Correct!";
-
-					Sleep(1000);
-					system("cls");
-				}
-			}
+			Sleep(1000);
+			system("cls");
 		}
 	}
-	else if (choice == 2)
-	{
-		cout << "Welcome to France!";
-		eiffelTower();
-	}
-	else if (choice == 3)
-	{
-		cout << "Welcome to Poland!";
-	}
-	else if (choice == 4)
-	{
-		cout << "Welcome to Spain!";
-	}
-	else if (choice == 5)
-	{
-		cout << "Welcome to Italy!";
-	}
-	else if (choice == 6)
-	{
-		cout << "Welcome to Czech Republic!";
-	}
-	else if (choice == 7)
-	{
-		cout << "Welcome to Greece!";
-	}
-	else if(choice == 8)
-	{
-		cout << "Welcome to Romania!";
-	}
-
 }
+	
+
+
 
 int main()
 {
