@@ -119,24 +119,37 @@ void game()
 	key = _getch();
 	system("cls");
 
+	transport1:
+
 	cout << "Your starting point is Bulgaria." << endl << endl;
 	cout << "Your first destination is Germany. How are you going to get there?" << endl << endl;
 	cout << "1. Train(100$ 1.5x score)   2. Car (150$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
-	cout << "Your balance: " << money << endl;
+	cout << "Your balance: " << money << endl << endl;
 
 	cin >> choice;
 
-	if (choice == 1)
+	if (choice == 1 && money >= 100)
 	{
 		multiplier += 1.5;
+		money -= 100;
 	}
-	else if (choice == 2)
+	else if (choice == 2 && money >= 150)
 	{
 		multiplier += 2;
+		money -= 150;
 	}
-	else if (choice == 3)
+	else if (choice == 3 && money >= 50)
 	{
 		multiplier += 1;
+		money -= 50;
+	}
+	else
+	{
+		cout << "Not enough money or wrong input!" << endl;
+		Sleep(1000);
+		system("cls");
+
+		goto transport1;
 	}
 
 	system("cls");
@@ -183,6 +196,105 @@ void game()
 
 			Sleep(1000);
 			system("cls");
+
+		germanyNext:
+
+			cout << "Great! Let's keep going." << endl << endl;
+
+			Sleep(1000);
+
+			cout << "While looking around Berlin, you take photos of the famous Brandenburg monument and go sightseeing a bit more." << endl;
+
+			cout << R"(
+         o#######o
+       o###########o
+      o#############o
+     #################
+     ######  \########o
+    '#;^ _^,/---\#####!
+    ,` /^_ .-~^~-.__\#
+   /    ^\/,,@@@,, ;|
+  |      \!!@@@@@!! ^,
+ #.    .\; '9@@@P'   ^,
+ ###./^ ----,_^^      /@-._
+               ^--._,o@@@@@@
+                  ^;@@@@@@@@@
+                    ^-;@@@@
+
+				
+		 )" << '\n';
+
+			cout << "Continue";
+			key = _getch();
+			system("cls");
+
+			cout << "After a day of fun, you feel tired and spend the night at a nearby hotel. (-10$ for the stay)" << endl;
+			cout << "The next morning you decide it's time to head to France." << endl << endl;
+
+			money -= 10;
+
+			cout << R"(
+o(=(=(=(=)=)=)=)o
+ !!!!!!}!{!!!!!!                                                ___ 
+ !!!!!} | {!!!!!                                               /   \
+ !!!!}  |  {!!!!     _!_     ()              ()     _!_       | //  |
+ !!!'   |   '!!!    |~@~|    ||______________||    |~@~|      |     |
+ ~@~----+----~@~    |___|    |                |    |___|       \___/
+ !!!    |    !!!      |      |      ~@@~      |      |       _________
+ !!!    |    !!!     ( )     |_______  _______|     ( )     |____-____|
+ !!!____|____!!!  __(___)__  {__~@~__}{__~@~__}  __(___)__  |____-____|
+ !!!=========!!!   |__-__|   %%%%%%%%%%%%%%%%%%   |__-__|   |____-____|
+_!!!_________!!!___|_____|_ %%%%%%%%%%%%%%%%%%%% _|_____|___|____-____|_
+                   |     | %%%%%%%%%%%%%%%%%%%%%% |     |   |/       \|
+                          %%%%%%%%%%%%%%%%%%%%%%%%
+                         %%%%%%%%%%%%%%%%%%%%%%%%%%
+                        %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                       /!!!!!!!!!!!!!!!!!!!!!!!!!!!!\
+                       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+                       !!!!!!!!!!!!!!!!!!!!!!!!!!lc!!
+                       `======~@~==========~@~======`
+                      `==============================`
+                     `====~@~==================~@~====`
+                    `==================================`
+                   `==~@~==========================~@~==`
+
+		 )" << '\n';
+
+			cout << "Continue";
+			key = _getch();
+			system("cls");
+
+			cout << "How are you going to get there?" << endl << endl;
+			cout << "1. Train(100$ 1.5x score)   2. Car (150$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+			cout << "Your balance: " << money << endl << endl;
+
+			transport2:
+
+			cin >> choice;
+
+
+			if (choice == 1 && money >= 100)
+			{
+				multiplier += 1.5;
+				money -= 100;
+			}
+			else if (choice == 2 && money >= 150)
+			{
+				multiplier += 2;
+				money -= 150;
+			}
+			else if (choice == 3 && money >= 50)
+			{
+				multiplier += 1;
+				money -= 50;
+			}
+			else
+			{
+				cout << "Not enough money or wrong input!";
+
+				goto transport2;
+			}
+			
 		}
 			
 	}
@@ -193,9 +305,11 @@ void game()
 		Sleep(1000);
 		system("cls");
 
-		cout << "Oof. That's okay, try this one!" << endl << endl;
+		cout << "Oof. That's okay, try this bonus question!" << endl << endl;
 			
 		germanyQuestion2();
+
+		cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
 
 		key = _getch();
 
@@ -208,6 +322,18 @@ void game()
 
 			Sleep(1000);
 			system("cls");
+
+			goto germanyNext;
+		}
+		else
+		{
+			cout << "Wrong! Better luck next time!" << endl << endl;
+			cout << "Continue";
+			
+			key = _getch();
+			system("cls");
+
+			goto germanyNext;
 		}
 	}
 }
