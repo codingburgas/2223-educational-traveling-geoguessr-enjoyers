@@ -14,6 +14,8 @@
 #include "header/bulgaria.h"
 #include "header/germanyQuestion1.h"
 #include "header/germanyQuestion2.h"
+#include "header/franceQuestion1.h"
+#include "header/franceQuestion2.h"
 
 using namespace std;
 
@@ -197,7 +199,7 @@ void game()
 			Sleep(1000);
 			system("cls");
 
-		germanyNext:
+			germanyNext:
 
 			cout << "Great! Let's keep going." << endl << endl;
 
@@ -228,7 +230,7 @@ void game()
 			key = _getch();
 			system("cls");
 
-			cout << "After a day of fun, you feel tired and spend the night at a nearby hotel. (-10$ for the stay)" << endl;
+			cout << "After a day of fun, you feel tired and spend the night at a nearby hotel. (-10$)" << endl;
 			cout << "The next morning you decide it's time to head to France." << endl << endl;
 
 			money -= 10;
@@ -263,12 +265,12 @@ _!!!_________!!!___|_____|_ %%%%%%%%%%%%%%%%%%%% _|_____|___|____-____|_
 			cout << "Continue";
 			key = _getch();
 			system("cls");
+			
+			transport2:
 
 			cout << "How are you going to get there?" << endl << endl;
 			cout << "1. Train(100$ 1.5x score)   2. Car (150$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
 			cout << "Your balance: " << money << endl << endl;
-
-			transport2:
 
 			cin >> choice;
 
@@ -291,10 +293,113 @@ _!!!_________!!!___|_____|_ %%%%%%%%%%%%%%%%%%%% _|_____|___|____-____|_
 			else
 			{
 				cout << "Not enough money or wrong input!";
+				Sleep(1000);
+				system("cls");
 
 				goto transport2;
 			}
+
+			system("cls");
+
+			cout << "You arrive in Paris and the first thing you see is the Eiffel Tower in front of you." << endl;
+			Sleep(1000);
+			cout << "Impressed by its size and beauty, you want to learn more about its past and creator." << endl << endl;
+			Sleep(1000);
+
+			eiffelTower();
+
+			cout << "Speaking of, here's the first question!" << endl << endl;
+			Sleep(1000);
+
+			cout << "Continue";
 			
+			key = _getch();
+			system("cls");
+
+			franceQuestion1();
+
+			cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+			key = _getch();
+
+			if (key == 'B' || key == 'b')
+			{
+				money += 25;
+				score += 200;
+
+				cout << "Correct!";
+
+				Sleep(1000);
+				system("cls");
+
+				cout << "Great! Let's see your knowledge about rivers!" << endl << endl;
+
+				franceQuestion2();
+
+				cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+				key = _getch();
+
+				if (key == 'C' || key == 'c')
+				{
+					money += 40;
+					score += 500;
+					
+					cout << "Correct!";
+					Sleep(1000);
+					system("cls");
+
+					franceNext:
+
+					cout << "Let's look around Paris a bit more." << endl;
+					Sleep(1000);
+
+
+				}
+
+			}
+			else
+			{
+				cout << "Wrong!";
+
+				Sleep(1000);
+				system("cls");
+				
+				cout << "That's okay, how about this one?" << endl << endl;
+
+				franceQuestion2();
+
+				cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+				key = _getch();
+
+				if (key == 'C' || key == 'c')
+				{
+					money += 20;
+					score += 400;
+
+					cout << "Correct!";
+
+					Sleep(1000);
+					system("cls");
+
+					goto franceNext;
+				}
+				else
+				{
+					cout << "Wrong! Better luck next time!" << endl << endl;
+					cout << "Continue";
+
+					key = _getch();
+					system("cls");
+
+					goto franceNext;
+				}
+
+			}
+
+			
+
 		}
 			
 	}
