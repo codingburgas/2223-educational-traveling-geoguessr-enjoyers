@@ -13,6 +13,7 @@
 #include "header/eiffelTower.h"
 #include "header/arc.h"
 #include "header/hotel.h"
+#include "header/gameOver.h"
 #include "header/germanyQuestion1.h"
 #include "header/germanyQuestion2.h"
 #include "header/franceQuestion1.h"
@@ -150,7 +151,7 @@ void game()
 	}
 	else
 	{
-		cout << "Not enough money or wrong input!" << endl;
+		cout << "Wrong input!" << endl;
 		Sleep(1000);
 		system("cls");
 
@@ -176,8 +177,8 @@ void game()
 
 	if (key == 'A' || key == 'a')
 	{
-		money += 10;
-		score += 100;
+		money += 15;
+		score += 150;
 
 		cout << "Correct!";
 
@@ -252,7 +253,6 @@ void game()
 
 			cin >> choice;
 
-
 			if (choice == 1 && money >= 100)
 			{
 				multiplier += 1.5;
@@ -270,7 +270,18 @@ void game()
 			}
 			else if(money < 50)
 			{
+				cout << endl;
 				cout << "You're out of money and can't progress further!" << endl << endl;
+
+				cout << "Continue";
+				key = _getch();
+				system("cls");
+
+				gameOver();
+
+				cout << "Score: " << score * multiplier;
+
+				exit(EXIT_SUCCESS);
 			}
 			else
 			{
@@ -402,6 +413,21 @@ void game()
 					{
 						multiplier += 1;
 						money -= 50;
+					}
+					else if (money < 50)
+					{
+						cout << endl;
+						cout << "You're out of money and can't progress further!" << endl << endl;
+
+						cout << "Continue";
+						key = _getch();
+						system("cls");
+
+						gameOver();
+
+						cout << "Score: " << score * multiplier;
+
+						exit(EXIT_SUCCESS);
 					}
 					else
 					{
