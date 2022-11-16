@@ -1,6 +1,6 @@
 void franceQuestion2()
 {
-    cout << "What is the name of the river that borders the Eiffel Tower?" << endl;
+    cout << "What famous footbal team has Madrid in its name?" << endl;
 
     cout << R"(
 	     _______________

@@ -1,12 +1,12 @@
 void franceQuestion2()
 {
-    cout << "What is the name of the river that borders the Eiffel Tower?" << endl;
+    cout << "In which part of Spain is Madrid located?" << endl;
 
     cout << R"(
 	     _______________
            _(               ),     ______________   ___________
-          (_   A: Loire      _)    _\  B: Marne  _\ (_          )_
-            (_______________)_    \_____________\    (_ C: Seine  )_
+          (_   A: Center      _)    _\  B: South _\ (_          )_
+            (_______________)_    \_____________\    (_ C: North  )_
                             (_)             (_         (___________)
 		)" << '\n';
 }
