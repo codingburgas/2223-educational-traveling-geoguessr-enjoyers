@@ -11,10 +11,14 @@
 #include "header/logo.h"
 #include "header/germany.h"
 #include "header/eiffelTower.h"
+#include "header/arc.h"
+#include "header/hotel.h"
 #include "header/germanyQuestion1.h"
 #include "header/germanyQuestion2.h"
 #include "header/franceQuestion1.h"
 #include "header/franceQuestion2.h"
+#include "header/spainQuestion1.h"
+#include "header/spainQuestion2.h"
 
 using namespace std;
 
@@ -132,12 +136,12 @@ void game()
 	if (choice == 1 && money >= 100)
 	{
 		multiplier += 1.5;
-		money -= 100;
+		money -= 75;
 	}
 	else if (choice == 2 && money >= 150)
 	{
 		multiplier += 2;
-		money -= 150;
+		money -= 100;
 	}
 	else if (choice == 3 && money >= 50)
 	{
@@ -234,32 +238,7 @@ void game()
 
 			money -= 10;
 
-			cout << R"(
-o(=(=(=(=)=)=)=)o
- !!!!!!}!{!!!!!!                                                ___ 
- !!!!!} | {!!!!!                                               /   \
- !!!!}  |  {!!!!     _!_     ()              ()     _!_       | //  |
- !!!'   |   '!!!    |~@~|    ||______________||    |~@~|      |     |
- ~@~----+----~@~    |___|    |                |    |___|       \___/
- !!!    |    !!!      |      |      ~@@~      |      |       _________
- !!!    |    !!!     ( )     |_______  _______|     ( )     |____-____|
- !!!____|____!!!  __(___)__  {__~@~__}{__~@~__}  __(___)__  |____-____|
- !!!=========!!!   |__-__|   %%%%%%%%%%%%%%%%%%   |__-__|   |____-____|
-_!!!_________!!!___|_____|_ %%%%%%%%%%%%%%%%%%%% _|_____|___|____-____|_
-                   |     | %%%%%%%%%%%%%%%%%%%%%% |     |   |/       \|
-                          %%%%%%%%%%%%%%%%%%%%%%%%
-                         %%%%%%%%%%%%%%%%%%%%%%%%%%
-                        %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                       /!!!!!!!!!!!!!!!!!!!!!!!!!!!!\
-                       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-                       !!!!!!!!!!!!!!!!!!!!!!!!!!lc!!
-                       `======~@~==========~@~======`
-                      `==============================`
-                     `====~@~==================~@~====`
-                    `==================================`
-                   `==~@~==========================~@~==`
-
-		 )" << '\n';
+			hotel();
 
 			cout << "Continue";
 			key = _getch();
@@ -277,17 +256,21 @@ _!!!_________!!!___|_____|_ %%%%%%%%%%%%%%%%%%%% _|_____|___|____-____|_
 			if (choice == 1 && money >= 100)
 			{
 				multiplier += 1.5;
-				money -= 100;
+				money -= 75;
 			}
 			else if (choice == 2 && money >= 150)
 			{
 				multiplier += 2;
-				money -= 150;
+				money -= 100;
 			}
 			else if (choice == 3 && money >= 50)
 			{
 				multiplier += 1;
 				money -= 50;
+			}
+			else if(money < 50)
+			{
+				cout << "You're out of money and can't progress further!" << endl << endl;
 			}
 			else
 			{
@@ -352,85 +335,21 @@ _!!!_________!!!___|_____|_ %%%%%%%%%%%%%%%%%%%% _|_____|___|____-____|_
 
 					cout << "Let's look around Paris a bit more." << endl;
 					Sleep(1000);
-					cout << "Here's the Arc de Triomphe, another famous Parisian monument!" << endl;
+					cout << "Here's the Arc de Triomphe, another famous Parisian monument!" << endl << endl;
 					Sleep(1000);
 
-					cout << R"(
-                                ..........,'RRRRRRRRRRRRRRRRRRRRRRRRR`,..........
-     1^?##-------##-------##-------##-------##-------##-------##-------##-------##-------##-------##-------##1
-     1                                                                                                     1
-  -------------------------------------------------------------------------------------------------------------
-   ===========================================================================================================
-     1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1 ' ` 1!!1
-     1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1 ` ' 1!!1
-     1!!1     1!!1     1!!1     1!!1     1!!1     1!!1     1!!1     1!!1     1!!1     1!!1     1!!1     1!!1
-    :1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1:
-    :1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1     1  1:
-    +-------------------------------------------------------------------------------------------------------+
-    1                                                                                                       1
-=================================================================================================================
-\   U       U       U       U       U       U       U       U       U       U       U       U       U       U   /
- ---------------------------------------------------------------------------------------------------------------
-    1U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U  U1
-    1  ..  .   . .   . . .   .  .   .  .  .   .  .  . .  . . .  .  . .  . .  . .  . .  .   . .   .  .  .   .1
-    1 . . .  .  . . . .    . .    .  .   . .    .  . .   . . .  .  .  . .  .. .  . .  .  .. . . .  . ..  .  1
-    1 ..   .    .  .   . .   . .   . .    .    .  .  .    .  .  . . .  .  .  . .  .   . .   .  . .  .  .  . 1
-    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    ---------------------------------------------------------------------------------------------------------
-    -------------------------------------------------   -   -------------------------------------------------
-    1                                1  .^.....      `:   :'      .....^.  1                                1
-    1                                1  :  .-'   ..---! - !---..   `-.  :  1                                1
-    1  +-------------------------+   1 .  :   .-'     !   !     `-.   :  . 1   +-------------------------+  1
-    1  1 ----------------------- 1   1 . .  .'    .----`-'----.    `.  . . 1   1 ----------------------- 1  1
-    1  1 ..   .  .  .   .  .  .  1   1 .. .'   .-'             `-.   `. .. 1   1 .  .  .   .  .  . . ..  1  1
-    1  1  . .  . .  .  .   . . . 1   1   :   .'                   `.   :   1   1 . . .. .  .  . .  .     1  1
-    1  1 .  . ..  .  .   .    .  1   1  :   '                       `   :  1   1  . .  .  . . .     . .  1  1
-    1  1  .      . . . .   . ... 1   1 :   '                         `   : 1   1 .. . . .       . .  .   1  1
-    1  1 .  . .      .  . . . .. 1   1.' .'                           `. `.1   1 ..  .   .   .    .  .   1  1
-    1  1 ======================= 1    :  '                             `  :    1 ======================= 1  1
-    1  +-------------------------+    ' :                               : `    +-------------------------+  1
-    1                                !  !                               !  !                                1
-    1                                1  1                               1  1                                1
-  =========================================                           =========================================
-    1                                1  1                               1  1                                1
-    1-----------------------------------1                               1-----------------------------------1
-    1                                1  1                               1  1                                1
-    1                                1  1                               1  1         -.     .' `            1
-    1                 ^              1  1                               1  1        ` . . -' : :            1
-    1               '                1  1                               1  1         :         ```-..       1
-    1        .   . . ^ .````         1  1                               1  1      ---:      O  ```````.     1
-    1         .   ..    `````        1  1                               1  1        ``  ``     '`````'      1
-    1         . ``   .   '   .       1  1                               1  1         ``             :       1
-    1           .  .      . .        1  1                               1  1        :      `    `    >      1
-    1        `'   .    `.   :        1  1                               1  1        .  ' '   :`.   :        1
-    1         .     '   ..  '        1  1                               1  1                 ---`           1
-    1        ' . ' `       ..        1  1                               1  1        `.  .  `.  ,  ..        1
-    1         '       ``  -  .       1  1                               1  1        ` `          ..         1
-    1        ` '  ^        :'        1  1                               1  1      ` .' .`          `        1
-    1        ..  .   ` .   :         1  1                               1  1       `        '  :.  .        1
-    1         .  ``. . ``   O        1  1                               1  1        `   -.   . `.           1
-    1         `   ::   !    :        1  1                               1  1           .    ' `.  ``        1
-    1          :  !!   !  .'         1  1                               1  1           .`.  :  : .'         1
-    1          ------------          1  1                               1  1          ------------          1
-    1         /            \         1  1                               1  1         /            \         1
-    1        ================        1  1                               1  1        ================        1
-   ===========1            1==========  1                               1  ==========1            1===========
-    1         1            1         1  1                               1  1         1            1         1
-    1         1            1         1  1                               1  1         1            1         1
-    1         1            1         1  1                               1  1         1            1         1
-    1         1            1         1  1                               1  1         1            1         1
-    1         1            1         1  1                               1  1         1            1         1
-   /---------/--------------\--------\---\                             /---/--------/--------------\---------\
-   1         1              1         1  1                             1  1         1              1         1
-   1         1              1         1  1                             1  1         1              1         1
-   -----------------------------------------------------------------------------------------------------------
-		 )" << '\n';
-
 					cout << "Fun fact!" << endl << endl;
-					cout << "A giant elephant was almost built in its place! An architect, Charles Ribart had created plans to construct a" << endl;
-					cout << "giant elephant named L'elephant Triumphal." << endl;
-					cout << "The construction of the elephant was ready to commence, but right before that, the French government changed its" << endl;
-					cout << "mind and rejected the plan." << endl << endl;
+					cout << "A giant elephant was almost built in its place! An architect, Charles Ribart" << endl;
+					cout << "had created plans to construct a giant elephant named L'elephant Triumphal." << endl;
+					Sleep(1000);
+					cout << "The construction of the elephant was ready to commence, but right before that," << endl;
+					cout << "the French government changed its mind and rejected the plan." << endl << endl;
+
+					cout << "Continue" << endl;
+					key = _getch();
+					system("cls");
+
+					arc();
 
 					cout << "Continue" << endl;
 					key = _getch();
@@ -497,6 +416,101 @@ _!!!_________!!!___|_____|_ %%%%%%%%%%%%%%%%%%%% _|_____|___|____-____|_
 
 					cout << "Welcome to Madrid! Here's the first question!" << endl << endl;
 
+					spainQuestion1();
+
+					cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+					key = _getch();
+
+					if (key == 'A' || key == 'a')
+					{
+						money += 40;
+						score += 400;
+
+						cout << "Correct!";
+
+						Sleep(1000);
+						system("cls");
+
+						cout << "Great! Let's see your knowledge about Madrid's culture!" << endl << endl;
+
+						spainQuestion2();
+
+						cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+						key = _getch();
+
+						if (key == 'B' || key == 'b')
+						{
+							money += 60;
+							score += 600;
+
+							cout << "Correct!";
+
+							Sleep(1000);
+							system("cls");
+
+							spainNext:
+
+							cout << "Moving on";
+						}
+						else
+						{
+							cout << "Wrong!";
+							Sleep(1000);
+							system("cls");
+
+							goto spainNext;
+						}
+
+
+					}
+					else
+					{
+						cout << "Wrong!";
+
+						Sleep(1000);
+						system("cls");
+
+						cout << "No worries, how about this one?" << endl << endl;
+
+						spainQuestion2();
+
+						cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+						key = _getch();
+
+						if (key == 'B' || key == 'b')
+						{
+							money += 60;
+							score += 600;
+
+							cout << "Correct!";
+
+							Sleep(1000);
+							system("cls");
+
+							goto spainNext;
+						}
+						else
+						{
+							cout << "Wrong! Better luck next time!" << endl << endl;
+							cout << "Continue";
+
+							key = _getch();
+							system("cls");
+
+							goto spainNext;
+						}
+					}
+				}
+				else
+				{
+					cout << "Wrong! You'll get them next time!" << endl;
+					Sleep(1000);
+					system("cls");
+
+					goto franceNext;
 				}
 
 			}

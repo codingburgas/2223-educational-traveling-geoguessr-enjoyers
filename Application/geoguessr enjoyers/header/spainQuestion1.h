@@ -1,4 +1,4 @@
-void franceQuestion2()
+void spainQuestion1()
 {
     cout << "In which part of Spain is Madrid located?" << endl;
 
