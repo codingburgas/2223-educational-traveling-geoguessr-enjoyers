@@ -392,7 +392,7 @@ void game()
 
 					transport3:
 
-					cout << "Let's keep going! Now traveling to Spain. But how exactly?" << endl;
+					cout << "Let's keep going! Now traveling to Spain. But how exactly?" << endl << endl;
 					cout << "1. Train(100$ 1.5x score)   2. Car (150$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
 					cout << "Your balance: " << money << endl << endl;
 
@@ -478,7 +478,117 @@ void game()
 
 							spainNext:
 
-							cout << "Moving on";
+							cout << "Alright! After spending some time looking arond Madrid, it's time to take a nap" << endl;
+							cout << "and head for the next stop, Italy!(-20$)" << endl;
+							money -= 20;
+
+							cout << "Continue" << endl;
+							key = _getch();
+							system("cls");
+
+							transport4:
+
+							cout << "Now, how should you travel to Italy ? " << endl << endl;
+							cout << "1. Train(100$ 1.5x score)   2. Car (150$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+							cout << "Your balance: " << money << endl << endl;
+
+							cin >> choice;
+
+							if (choice == 1 && money >= 100)
+							{
+								multiplier += 1.5;
+								money -= 100;
+							}
+							else if (choice == 2 && money >= 150)
+							{
+								multiplier += 2;
+								money -= 150;
+							}
+							else if (choice == 3 && money >= 50)
+							{
+								multiplier += 1;
+								money -= 50;
+							}
+							else if (money < 50)
+							{
+								cout << endl;
+								cout << "You're out of money and can't progress further!" << endl << endl;
+
+								cout << "Continue";
+								key = _getch();
+								system("cls");
+
+								gameOver();
+
+								cout << "Score: " << score * multiplier;
+
+								exit(EXIT_SUCCESS);
+							}
+							else
+							{
+								cout << "Not enough money or wrong input!";
+								Sleep(1000);
+								system("cls");
+
+								goto transport4;
+							}
+
+							system("cls");
+
+							cout << "Welcome to Italy! We'll be visiting Rome - Italy's capital and home to one of the most powerful empires in history!" << endl;
+							cout << "I bet you can't wait to explore and learn more about it, right?" << endl;
+
+							cout << R"(
+
+
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░    ▓▓████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ████████████████████████
+▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓                      ██████████████████████████
+▓▓                                    ██████████████████████████
+▓▓                                  ████████████████████████████
+▓▓▓▓                            ████████████████████████████████
+                                ████████████████████████████████
+▓▓                              ▓▓██████████████████████████████
+▓▓                              ████████████████████████████████
+▓▓          ▓▓▓▓                ████████████████████████████████
+▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓              ██████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ██████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ██████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒                      ██████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ██████  
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ██████  
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓          ████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ██████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
+
+
+							)" << endl;
+
+							cout << "Continue";
+							key = _getch();
+							system("cls");
+
+
 						}
 						else
 						{
@@ -487,6 +597,7 @@ void game()
 							system("cls");
 
 							goto spainNext;
+
 						}
 
 
@@ -580,8 +691,14 @@ void game()
 
 			}
 
-			
+		}
+		else
+		{
+			cout << "Wrong! Good luck on the next one!" << endl;
+			Sleep(1000);
+			system("cls");
 
+			goto germanyNext;
 		}
 			
 	}
