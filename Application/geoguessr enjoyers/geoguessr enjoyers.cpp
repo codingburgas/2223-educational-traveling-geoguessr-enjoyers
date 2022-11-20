@@ -194,6 +194,106 @@ void Germany()
 	}
 }
 
+void France()
+{
+	system("cls");
+
+	cout << "You arrive in Paris and the first thing you see is the Eiffel Tower in front of you." << endl;
+	Sleep(1000);
+	cout << "Impressed by its size and beauty, you want to learn more about its past and creator." << endl << endl;
+	Sleep(1000);
+
+	eiffelTower();
+
+	cout << "Speaking of, here's the first question!" << endl << endl;
+	Sleep(1000);
+
+	cout << "Continue";
+
+	key = _getch();
+	system("cls");
+
+	franceQuestion1();
+
+	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+	cout << "Balance: " << money << endl << endl;
+
+	key = _getch();
+
+	if (key == 'B' || key == 'b')
+	{
+		money += 25;
+		score += 200;
+
+		cout << "Correct!";
+
+		Sleep(1000);
+		system("cls");
+
+	franceNext1:
+
+		cout << "Great! Let's see your knowledge about rivers!" << endl << endl;
+
+		franceQuestion2();
+
+		cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+		cout << "Balance: " << money << endl << endl;
+
+		key = _getch();
+
+		if (key == 'C' || key == 'c')
+		{
+			money += 40;
+			score += 500;
+
+			cout << "Correct!";
+			Sleep(1000);
+			system("cls");
+
+		franceNext2:
+
+			cout << "Let's look around Paris a bit more." << endl;
+			Sleep(1000);
+			cout << "Here's the Arc de Triomphe, another famous Parisian monument!" << endl << endl;
+			Sleep(1000);
+
+			cout << "Fun fact!" << endl << endl;
+			cout << "A giant elephant was almost built in its place! An architect, Charles Ribart" << endl;
+			cout << "had created plans to construct a giant elephant named L'elephant Triumphal." << endl;
+			Sleep(1000);
+			cout << "The construction of the elephant was ready to commence, but right before that," << endl;
+			cout << "the French government changed its mind and rejected the plan." << endl << endl;
+
+			cout << "Continue" << endl;
+			key = _getch();
+			system("cls");
+
+			arc();
+
+			cout << "Continue" << endl;
+			key = _getch();
+			system("cls");
+		}
+		else
+		{
+			cout << "Wrong!";
+			Sleep(1000);
+			system("cls");
+
+			goto franceNext2;
+		}
+	}
+	else
+	{
+		cout << "Wrong!";
+
+		Sleep(1000);
+		system("cls");
+
+		goto franceNext1;
+	}
+}
+
 void game()
 {
 	cout << "Hello, player! Hope you have fun while playing this!";
