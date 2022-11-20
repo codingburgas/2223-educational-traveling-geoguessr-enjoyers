@@ -20,6 +20,8 @@
 #include "header/questions/France/franceQuestion2.h"
 #include "header/questions/Spain/spainQuestion1.h"
 #include "header/questions/Spain/spainQuestion2.h"
+#include "header/questions/Italy/italyQuestion1.h"
+#include "header/questions/Italy/italyQuestion2.h"
 
 using namespace std;
 
@@ -161,6 +163,7 @@ void game()
 	system("cls");
 
 	cout << "Welcome to Germany!";
+
 	germany();
 
 	cout << "You arrive in Berlin, eager to begin your trip around Europe. Here's the first question!" << endl << endl;
@@ -177,15 +180,17 @@ void game()
 
 	if (key == 'A' || key == 'a')
 	{
-		money += 15;
-		score += 150;
+		money += 20;
+		score += 200;
 
 		cout << "Correct!";
 
 		Sleep(1000);
 		system("cls");
 
-		cout << "Nice one! But can you get this bonus question right?" << endl << endl;
+		germanyNext1:
+
+		cout << "Can you get this bonus question right?" << endl << endl;
 			
 		germanyQuestion2();
 
@@ -195,7 +200,7 @@ void game()
 
 		if (key == 'A' || key == 'a')
 		{
-			money += 20;
+			money += 40;
 			score += 400;
 
 			cout << "Correct!";
@@ -203,7 +208,7 @@ void game()
 			Sleep(1000);
 			system("cls");
 
-			germanyNext:
+			germanyNext2:
 
 			cout << "Great! Let's keep going." << endl << endl;
 
@@ -450,8 +455,8 @@ void game()
 
 					if (key == 'A' || key == 'a')
 					{
-						money += 40;
-						score += 400;
+						money += 50;
+						score += 500;
 
 						cout << "Correct!";
 
@@ -479,7 +484,7 @@ void game()
 							spainNext:
 
 							cout << "Alright! After spending some time looking arond Madrid, it's time to take a nap" << endl;
-							cout << "and head for the next stop, Italy!(-20$)" << endl;
+							cout << "and head for the next stop, Italy!(-20$)" << endl << endl;
 							money -= 20;
 
 							cout << "Continue" << endl;
@@ -588,11 +593,74 @@ void game()
 							key = _getch();
 							system("cls");
 
+							italyQuestion1();
+
+							cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+							key = _getch();
+
+							if (key == 'C' || key == 'c')
+							{
+								money += 70;
+								score += 700;
+
+								cout << "Correct!";
+								cout << money;
+
+								Sleep(1000);
+								system("cls");
+
+								italyNext1:
+
+								cout << "Here's the bonus question, good luck!" << endl << endl;
+
+								italyQuestion2();
+
+								cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+
+								key = _getch();
+
+								if(key == 'A' || key == 'a')
+								{
+									money += 85;
+									score += 900;
+									
+									cout << "Correct!";
+
+									Sleep(1000);
+									system("cls");
+
+									italyNext2:
+
+									cout << "Great! We should definitely check out the colosseum!";
+								}
+								else
+								{
+									cout << "Wrong! ";
+									cout << money;
+
+									Sleep(1000);
+									system("cls");
+
+									goto italyNext2;
+								}
+							}
+							else
+							{
+								cout << "Wrong! ";
+								cout << money;
+
+								Sleep(1000);
+								system("cls");
+
+								goto italyNext1;
+							}
 
 						}
 						else
 						{
-							cout << "Wrong!";
+							cout << "Wrong! ";
+							cout << money;
 							Sleep(1000);
 							system("cls");
 
@@ -698,47 +766,19 @@ void game()
 			Sleep(1000);
 			system("cls");
 
-			goto germanyNext;
+			goto germanyNext2;
 		}
 			
 	}
 	else
 	{
-		cout << "Wrong!";
+		cout << "Wrong! ";
+		cout << money;
 
 		Sleep(1000);
 		system("cls");
 
-		cout << "Oof. That's okay, try this bonus question!" << endl << endl;
-			
-		germanyQuestion2();
-
-		cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-
-		key = _getch();
-
-		if (key == 'A' || key == 'a')
-		{
-			money += 20;
-			score += 400;
-
-			cout << "Correct!";
-
-			Sleep(1000);
-			system("cls");
-
-			goto germanyNext;
-		}
-		else
-		{
-			cout << "Wrong! Better luck next time!" << endl << endl;
-			cout << "Continue";
-			
-			key = _getch();
-			system("cls");
-
-			goto germanyNext;
-		}
+		goto germanyNext1;
 	}
 }
 	
