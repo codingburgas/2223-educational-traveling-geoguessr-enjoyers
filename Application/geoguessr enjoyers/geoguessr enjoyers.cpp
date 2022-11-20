@@ -24,6 +24,8 @@
 #include "header/questions/Italy/italyQuestion2.h"
 #include "header/questions/Greece/greeceQuestion1.h"
 #include "header/questions/Greece/greeceQuestion2.h"
+#include "header/questions/Belgium/belgiumQuestion1.h"
+#include "header/questions/Belgium/belgiumQuestion2.h"
 
 using namespace std;
 
@@ -95,8 +97,8 @@ void mainMenu()
 
 void Germany()
 {
-	void germanyMap();
-    cout << "Welcome to Germany!";
+	germany();
+    cout << "Welcome to Germany!" << endl;
 
 	cout << "You arrive in Berlin, eager to begin your trip around Europe. Here's the first question!" << endl << endl;
 	cout << "Continue" << endl;
@@ -600,8 +602,7 @@ void Greece()
 	greeceNext1:
 
 	cout << "Here's the bonus question, good luck!";
-	Sleep(500);
-	system("cls");
+	Sleep(1000);
 
 	greeceQuestion2();
 	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
@@ -628,9 +629,9 @@ void Greece()
 														||   \________/
 														||      ___
 														||     /_  )__
-											__|\/)     ||   _/_ \____)
-										,----`     \     ||  />=o)
-										\_____      \    ||  \]__\
+											__|\/)      ||   _/_ \____)
+										,----`     \    ||  />=o)
+										\_____      \   ||  \]__\
 											`--,_/U\  B|\__/===\
 												|UUUU\  ||_ _|_\_ \
 												|UUUUU\_|[,`_|__|_)
@@ -647,12 +648,85 @@ void Greece()
 	}
 	else
 	{
-		cout << "Wrong! ";
+		cout << "Wrong!";
 
 		Sleep(1000);
 		system("cls");
 
 		goto greeceNext2;
+	}
+}
+
+void Belgium()
+{
+	cout << "You arrive in Belgium - the heart of Europe. You decide to visit the most important building for the European Union - the European Parliament." << endl;
+	cout << "Which reminds me about something...";
+	cout << "Continue";
+	key = _getch();
+	system("cls");
+
+	belgiumQuestion1();
+	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+	cout << "Balance: " << money << endl << endl;
+
+	key = _getch();
+	if (key == 'A' || key == 'a')
+	{
+		money += 90;
+		score += 900;
+
+		cout << "Correct!";
+
+		Sleep(1000);
+		system("cls");
+
+		belgiumNext1:
+
+		cout << "Here is the bonus question!" << endl << endl;
+
+		belgiumQuestion2();
+
+		cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+		cout << "Balance: " << money << endl << endl;
+
+		key = _getch();
+
+		if (key == 'B' || key == 'b')
+		{
+			money += 80;
+			score += 900;
+
+			cout << "Correct!";
+
+			Sleep(1000);
+			system("cls");
+
+			belgiumNext2:
+
+			cout << "Fun fact:" << endl;
+			cout << "The tallest brick structure is the called Church of Our Lady and it's the third tallest building in the world. It's about 116 meters tall." << endl << endl;
+
+			cout << "Continue" << endl;
+			key = _getch();
+			system("cls");
+		}
+		else
+		{
+			cout << "Wrong!";
+			Sleep(1000);
+			system("cls");
+
+			goto belgiumNext2;
+		}
+	}
+	else
+	{
+		cout << "Wrong!";
+
+		Sleep(1000);
+		system("cls");
+
+		goto belgiumNext1;
 	}
 }
 
@@ -902,6 +976,53 @@ void game()
 	}
 
 	Greece();
+	system("cls");
+	transport6:
+
+	cout << "Off you go to Belgium! How should we get there?" << endl << endl;
+	cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+	cout << "Your balance: " << money << endl << endl;
+
+	cin >> choice;
+
+	if (choice == 1 && money >= 100)
+	{
+		multiplier += 1.5;
+		money -= 100;
+	}
+	else if (choice == 2 && money >= 150)
+	{
+		multiplier += 2;
+		money -= 150;
+	}
+	else if (choice == 3 && money >= 50)
+	{
+		money -= 50;
+	}
+	else if (money < 50)
+	{
+		cout << endl;
+		cout << "You're out of money and can't progress further!" << endl << endl;
+
+		cout << "Continue";
+		key = _getch();
+		system("cls");
+
+		gameOver();
+
+		cout << "Score: " << score * multiplier;
+
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		cout << "Not enough money or wrong input!";
+		Sleep(1000);
+		system("cls");
+		goto transport6;
+	}
+
+	Belgium();
 	system("cls");
 }
 	
