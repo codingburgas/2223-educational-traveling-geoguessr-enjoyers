@@ -14,6 +14,7 @@
 #include "header/art/arc.h"
 #include "header/art/hotel.h"
 #include "header/art/gameOver.h"
+#include "header/art/endScreen.h"
 #include "header/questions/Germany/germanyQuestion1.h"
 #include "header/questions/Germany/germanyQuestion2.h"
 #include "header/questions/France/franceQuestion1.h"
@@ -26,6 +27,7 @@
 #include "header/questions/Greece/greeceQuestion2.h"
 #include "header/questions/Belgium/belgiumQuestion1.h"
 #include "header/questions/Belgium/belgiumQuestion2.h"
+#include "header/art/endScreen.h"
 
 using namespace std;
 
@@ -659,8 +661,9 @@ void Greece()
 
 void Belgium()
 {
+	system("cls");
 	cout << "You arrive in Belgium - the heart of Europe. You decide to visit the most important building for the European Union - the European Parliament." << endl;
-	cout << "Which reminds me about something...";
+	cout << "Which reminds me about something..." << endl << endl;
 	cout << "Continue";
 	key = _getch();
 	system("cls");
@@ -1024,6 +1027,8 @@ void game()
 
 	Belgium();
 	system("cls");
+
+	endScreen();
 }
 	
 int main()
