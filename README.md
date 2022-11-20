@@ -1,9 +1,8 @@
 <p align="center">
-  <a href="" rel="noopener">
 
 </p>
 
-<h1 align="center">Geoguessr enjoyers</h3>
+<h1 align="center" font-size=60px>Geoguessr enjoyers</h3>
 
 <p align="center"> 🌎Travel around the world, visit different countries and answer some questions about them!
     <br> 
@@ -12,13 +11,10 @@
 ## 📝 Table of Contents
 + [Our team](#teamInfo)
 + [Used technologies and tools](#languagesAndtools)
-+ [Documentation and presentation](#docAndPres)
-+ [About the website](#about)
++ [License](#license)
 + [Installation](#install)
-+ [Useful links](#acknowledgement)
-+ [Sources](#sources)
 
-## <p id = "teamInfo">Team <a name = "team">The Pirate's Cove</a> </p>
+## <p id = "teamInfo">Team <a name = "team">Geoguessr enjoyers</a> </p>
 - Scrum Trainer - [Nikola Krushkov](https://github.com/NikolaKrushkov)
 - Back-end developer - [Mario Zlatev](https://github.com/MIZlatev20)
 - Back-end developer - [Georgi Zhekov](https://github.com/GTZhekov20)
