@@ -151,20 +151,20 @@ void Germany()
 			cout << "While looking around Berlin, you take photos of the famous Brandenburg monument and go sightseeing a bit more." << endl;
 
 			cout << R"(
-			o#######o
-		o###########o
-		o#############o
-		#################
-		######  \########o
-		'#;^ _^,/---\#####!
-		,` /^_ .-~^~-.__\#
-	/    ^\/,,@@@,, ;|
-	|      \!!@@@@@!! ^,
-	#.    .\; '9@@@P'   ^,
-	###./^ ----,_^^      /@-._
-				^--._,o@@@@@@
-					^;@@@@@@@@@
-						^-;@@@@
+		 o#######o
+       o###########o
+      o#############o
+     #################
+     ######  \########o
+    '#;^ _^,/---\#####!
+    ,` /^_ .-~^~-.__\#
+   /    ^\/,,@@@,, ;|
+  |      \!!@@@@@!! ^,
+ #.    .\; '9@@@P'   ^,
+ ###./^ ----,_^^      /@-._
+               ^--._,o@@@@@@
+                  ^;@@@@@@@@@
+                    ^-;@@@@
 
 					
 			)" << '\n';
@@ -284,17 +284,14 @@ void France()
 			key = _getch();
 			system("cls");
 
-			
-			
-
 			cout << "Time for some rest, you grab a snack from a nearby cafe and book a room at a hotel (-15$)";
 			money -= 15;
 
 			cout << R"(
-						{
-					{   }
+					  {
+				   {   }
 					}_{ __{
-					.-{   }   }-.
+				 -{    }   }-.
 				(   }     {   )
 				|`-.._____..-'|
 				|             ;--.
@@ -335,6 +332,7 @@ void France()
 void Spain()
 {
 	cout << "Welcome to Madrid! Here's the first question!" << endl << endl;
+	system("cls");
 
 	spainQuestion1();
 
@@ -383,8 +381,6 @@ void Spain()
 			cout << "Continue" << endl;
 			key = _getch();
 			system("cls");
-
-			transport4:
 		}
 		else
 		{
@@ -408,6 +404,7 @@ void Spain()
 
 void Italy()
 {
+	system("cls");
 	cout << "Welcome to Italy! We'll be visiting Rome - Italy's capital and home to one of the most powerful empires in history!" << endl;
 	cout << "I bet you can't wait to explore and learn more about it, right?" << endl;
 
@@ -503,13 +500,13 @@ void Italy()
 				cout << R"(
 
 							
-						\\||      
-						,'_,-\     
-						;'____\    
-						|| =\=|    
-						||  - |                               
-					,---'._--''-,,---------.--.----_,         
-					/ `-._- _--/,,|  ___,,--'--'._<            
+					\\||      
+					,'_,-\     
+					;'____\    
+					|| =\=|    
+					||  - |                               
+				,---'._--''-,,---------.--.----_,         
+				/ `-._- _--/,,|  ___,,--'--'._<            
 				/-._,  `-.__;,,|'                           
 				/   ;\      / , ;                            
 				/  ,' | _ - ',/, ;
@@ -534,16 +531,16 @@ void Italy()
 
 				cout << R"(
 
-															|||
+															 |||
 															|||||,
-														\|||||/
-						/)                               `|||||/
-					,-""//-. ______                       |`"""'|
-				==|`-.//.-'|,-----'======================|  P  |====
+														   \|||||/
+						/)                                 `|||||/
+					 ,-""//-. ______                       |`"""'|
+				  ==|`-.//.-'|,-----'======================|  P  |====
 					|        |---,---,  .---,((--------.   |  A  |
 					|        |  /(_)/  /   (()))` ;'", \   |  S  |
 					`-.____.-' /_  /  /  /| `;',`;; ,/( \  |  T  |
-							/(_)/  /  //  ; ` "  ((()) \ |  A  |
+							  /(_)/  /  //  ; ` "  ((()) \ |  A  |
 					.-::-.   /_  /  /  /)   "' ;" ; `;"'  \`-...-'
 				(::::::) /(_)/   `=//==================='  
 					`-::-' /   /     (/
@@ -553,13 +550,10 @@ void Italy()
 				cout << "Continue";
 				key = _getch();
 				system("cls");
-
-				transport5:
 			}
 			else
 			{
-				cout << "Wrong! ";
-				cout << money;
+				cout << "Wrong!";
 
 				Sleep(1000);
 				system("cls");
@@ -581,6 +575,7 @@ void Italy()
 
 void Greece()
 {
+	system("cls");
 	cout << "You arrive in Athens, Greece's capital. Astonished by the amount of monuments here, you decide to visit the most popular one." << endl;
 	cout << "Standing before the iconic Parthenon, you take some pictures to post in your social media accounts." << endl << endl;
 	cout << "Continue";
@@ -623,7 +618,7 @@ void Greece()
 		Sleep(1000);
 		system("cls");
 
-	greeceNext2:
+		greeceNext2:
 
 		cout << "Good job! Your knowledge of the greek mythology is amazing!" << endl;
 		cout << "You also visit the monument of the Alexander The Great - one of the most powerful leaders ever." << endl;
@@ -649,7 +644,15 @@ void Greece()
 												\ \   |=============  /    \\\\\
 													\ |             | |
 										)";
-	transport6:
+	}
+	else
+	{
+		cout << "Wrong! ";
+
+		Sleep(1000);
+		system("cls");
+
+		goto greeceNext2;
 	}
 }
 
@@ -764,44 +767,46 @@ void game()
 
 	if (choice == 1 && money >= 100)
 	{
-	multiplier += 1.5;
-	money -= 100;
+		multiplier += 1.5;
+		money -= 100;
 	}
 	else if (choice == 2 && money >= 150)
 	{
-	multiplier += 2;
-	money -= 150;
+		multiplier += 2;
+		money -= 150;
 	}
 	else if (choice == 3 && money >= 50)
 	{
-	money -= 50;
+		money -= 50;
 	}
 	else if (money < 50)
 	{
-	cout << endl;
-	cout << "You're out of money and can't progress further!" << endl << endl;
+		cout << endl;
+		cout << "You're out of money and can't progress further!" << endl << endl;
 
-	cout << "Continue";
-	key = _getch();
-	system("cls");
+		cout << "Continue";
+		key = _getch();
+		system("cls");
 
-	gameOver();
+		gameOver();
 
-	cout << "Score: " << score * multiplier;
+		cout << "Score: " << score * multiplier;
 
-	exit(EXIT_SUCCESS);
+		exit(EXIT_SUCCESS);
 	}
 	else
 	{
-	cout << "Not enough money or wrong input!";
-	Sleep(1000);
-	system("cls");
+		cout << "Not enough money or wrong input!";
+		Sleep(1000);
+		system("cls");
 
-	goto transport3;
+		goto transport3;
 	}
 
 	Spain();
 	system("cls");
+
+	transport4:
 
 	cout << "Now, how should you travel to Italy ? " << endl << endl;
 	cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
@@ -844,11 +849,13 @@ void game()
 		Sleep(1000);
 		system("cls");
 
-		transport4:
+		goto transport4;
 	}
 
 	Italy();
 	system("cls");
+
+	transport5:
 
 	cout << "Next stop, Greece! How should we get there?" << endl << endl;
 	cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
@@ -890,8 +897,8 @@ void game()
 		cout << "Not enough money or wrong input!";
 		Sleep(1000);
 		system("cls");
+		goto transport5;
 
-		transport5:
 	}
 
 	Greece();
@@ -900,10 +907,7 @@ void game()
 	
 int main()
 {
-	
 	mainMenu();
 
 	game();
-
-	
 }
