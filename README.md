@@ -23,14 +23,11 @@
 ## <p id="languagesAndtools">🚀 Languages and tools</p>
 
 <p align="left"> 
-    <img src="https://img.icons8.com/color/48/000000/html-5.png"/> 
-    <img src="https://img.icons8.com/color/48/000000/css3.png"/> 
     <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/>
-    <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width=52px height=52px>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/2060px-Visual_Studio_Icon_2019.svg.png" width=45px height=45px>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png" width=92px height=52px>
-    <img src="https://i.ytimg.com/vi/6EGh-o_7cWk/maxresdefault.jpg" width=82px height=52px>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1024px-Git_icon.svg.png" width=52px height=52px>
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=52px height=52px>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png" width=52px height=52px>
 
 
 ## <p id = "about">🧐 About <a name = "about">our game</a></p>
