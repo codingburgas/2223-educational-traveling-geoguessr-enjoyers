@@ -192,6 +192,16 @@ void Germany()
 
 		goto germanyNext1;
 	}
+
+		
+	cout << "After a day of fun, you feel tired and spend the night at a nearby hotel. (-10$)" << endl;
+	cout << "The next morning you decide it's time to head to France." << endl << endl;
+	money -= 10;
+	hotel();
+
+	cout << "Continue";
+	key = _getch();
+	system("cls");
 }
 
 void France()
@@ -273,6 +283,29 @@ void France()
 			cout << "Continue" << endl;
 			key = _getch();
 			system("cls");
+
+			
+			
+
+			cout << "Time for some rest, you grab a snack from a nearby cafe and book a room at a hotel (-15$)";
+			money -= 15;
+
+			cout << R"(
+						{
+					{   }
+					}_{ __{
+					.-{   }   }-.
+				(   }     {   )
+				|`-.._____..-'|
+				|             ;--.
+				|            (__  \
+				|             | )  )
+				|             |/  /
+				|             /  /    
+				|            (  /
+				\             y'
+				 `-.._____..-'
+		 	)" << '\n';
 		}
 		else
 		{
@@ -292,29 +325,268 @@ void France()
 
 		goto franceNext1;
 	}
+
+	cout << "Continue" << endl;
+	key = _getch();
+	system("cls");
+
+}
+
+void Spain()
+{
+	cout << "Welcome to Madrid! Here's the first question!" << endl << endl;
+
+	spainQuestion1();
+
+	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+	cout << "Balance: " << money << endl << endl;
+
+	key = _getch();
+
+	if (key == 'A' || key == 'a')
+	{
+		money += 50;
+		score += 500;
+
+		cout << "Correct!";
+
+		Sleep(1000);
+		system("cls");
+
+		spainNext1:
+
+		cout << "Let's see your knowledge about Madrid's culture!" << endl << endl;
+
+		spainQuestion2();
+
+		cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+		cout << "Balance: " << money << endl << endl;
+
+		key = _getch();
+
+		if (key == 'B' || key == 'b')
+		{
+			money += 60;
+			score += 600;
+
+			cout << "Correct!";
+
+			Sleep(1000);
+			system("cls");
+
+			spainNext2:
+
+			cout << "Alright! After spending some time looking arond Madrid, it's time to take a nap" << endl;
+			cout << "and head for the next stop, Italy!(-20$)" << endl << endl;
+			money -= 20;
+
+			cout << "Continue" << endl;
+			key = _getch();
+			system("cls");
+
+			transport4:
+		}
+		else
+		{
+			cout << "Wrong!";
+			Sleep(1000);
+			system("cls");
+
+			goto spainNext2;
+		}
+	}
+	else
+	{
+		cout << "Wrong!";
+
+		Sleep(1000);
+		system("cls");
+
+		goto spainNext1;
+	}
+}
+
+void Italy()
+{
+	cout << "Welcome to Italy! We'll be visiting Rome - Italy's capital and home to one of the most powerful empires in history!" << endl;
+	cout << "I bet you can't wait to explore and learn more about it, right?" << endl;
+
+	cout << R"(
+
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░    ▓▓████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ████████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ████████████████████████
+▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓                      ██████████████████████████
+▓▓                                    ██████████████████████████
+▓▓                                  ████████████████████████████
+▓▓▓▓                            ████████████████████████████████
+                                ████████████████████████████████
+▓▓                              ▓▓██████████████████████████████
+▓▓                              ████████████████████████████████
+▓▓          ▓▓▓▓                ████████████████████████████████
+▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓              ██████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ██████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ██████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒                      ██████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ██████  
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ██████  
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓          ████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ██████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
+		)" << endl;
+
+	cout << "Continue";
+	key = _getch();
+	system("cls");
+
+	italyQuestion1();
+
+	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+	cout << "Balance: " << money << endl << endl;
+
+	key = _getch();
+
+	if (key == 'C' || key == 'c')
+	{
+		money += 70;
+		score += 700;
+
+		cout << "Correct!";
+
+		Sleep(1000);
+		system("cls");
+
+		italyNext1:
+
+		cout << "Here's the bonus question, good luck!" << endl << endl;
+
+		italyQuestion2();
+
+		cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+		cout << "Balance: " << money << endl << endl;
+
+		key = _getch();
+
+			if(key == 'A' || key == 'a')
+			{
+				money += 85;
+				score += 900;
+				
+				cout << "Correct!";
+
+				Sleep(1000);
+				system("cls");
+
+				italyNext2:
+
+				cout << "Great! We should definitely check out the colosseum! Imagine how many" << endl;
+				cout << "emperors were changed while it was being built.";
+				cout << R"(
+
+							
+						\\||      
+						,'_,-\     
+						;'____\    
+						|| =\=|    
+						||  - |                               
+					,---'._--''-,,---------.--.----_,         
+					/ `-._- _--/,,|  ___,,--'--'._<            
+				/-._,  `-.__;,,|'                           
+				/   ;\      / , ;                            
+				/  ,' | _ - ',/, ;
+				(  (   |     /, ,,;
+				\  \  |     ',,/,;
+				\  \ |    /, / ,;
+				(| ,^.|   / ,, ,/;
+				`-'./ `-._,, ,/,;
+					�-._ `-._,,;
+					|/,,`-._ `-.
+					|, ,;, ,`-._\
+
+
+				)" << endl;
+
+				cout << "Continue";
+				key = _getch();
+				system("cls");
+
+				cout << "You go to a nearby restaurant to try traditional Italian spaghetti. Tasty! (-25$)";
+				money -= 25;
+
+				cout << R"(
+
+															|||
+															|||||,
+														\|||||/
+						/)                               `|||||/
+					,-""//-. ______                       |`"""'|
+				==|`-.//.-'|,-----'======================|  P  |====
+					|        |---,---,  .---,((--------.   |  A  |
+					|        |  /(_)/  /   (()))` ;'", \   |  S  |
+					`-.____.-' /_  /  /  /| `;',`;; ,/( \  |  T  |
+							/(_)/  /  //  ; ` "  ((()) \ |  A  |
+					.-::-.   /_  /  /  /)   "' ;" ; `;"'  \`-...-'
+				(::::::) /(_)/   `=//==================='  
+					`-::-' /   /     (/
+				----------'---'
+				)" << endl;
+				
+				cout << "Continue";
+				key = _getch();
+				system("cls");
+
+				transport5:
+			}
+			else
+			{
+				cout << "Wrong! ";
+				cout << money;
+
+				Sleep(1000);
+				system("cls");
+
+				goto italyNext2;
+			}
+		}
+	else
+	{
+		cout << "Wrong! ";
+		cout << money;
+
+		Sleep(1000);
+		system("cls");
+
+		goto italyNext1;
+	}
 }
 
 void game()
 {
-	cout << "Hello, player! Hope you have fun while playing this!";
-	cout << endl;
-
-	system("cls");
-	cout << "Press enter to continue";
-
-	Sleep(1000);
-
-	int key = _getch();
-	system("cls");
-
 	cout << "After saving up enough money, you decide to explore different countries in Europe." << endl << endl;
 	Sleep(1000);
 	cout << "You will visit some of the most popular monuments in the country and " << endl; 
 	cout << "you will be asked historical and geographical questions about the country." << endl << endl;
 	Sleep(1000);
-	cout << "Answer it right and you will get points. If you manage to answer the " << endl;
-	cout << "second question(it is going to be a difficult one), you will get bonus points." << endl << endl;
-	Sleep(1000);
+	cout << "Answer them right and you will get points." << endl;
 	cout << "Try to achieve the most points and win." << endl << endl;
 	cout << "Press enter to continue";
 	Sleep(1000);
@@ -357,15 +629,6 @@ void game()
 	system("cls");
 
 	Germany();
-	
-	cout << "After a day of fun, you feel tired and spend the night at a nearby hotel. (-10$)" << endl;
-	cout << "The next morning you decide it's time to head to France." << endl << endl;
-	money -= 10;
-	hotel();
-
-	cout << "Continue";
-	key = _getch();
-	system("cls");
 			
 	transport2:
 
@@ -394,126 +657,27 @@ void game()
 		cout << endl;
 		cout << "You're out of money and can't progress further!" << endl << endl;
 
-				cout << "Continue";
-				key = _getch();
-				system("cls");
+		cout << "Continue";
+		key = _getch();
+		system("cls");
 
-				gameOver();
+		gameOver();
 
-				cout << "Score: " << score * multiplier;
+		cout << "Score: " << score * multiplier;
 
-				exit(EXIT_SUCCESS);
-			}
-			else
-			{
-				cout << "Not enough money or wrong input!";
-				Sleep(1000);
-				system("cls");
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		cout << "Not enough money or wrong input!";
+		Sleep(1000);
+		system("cls");
 
-				goto transport2;
-			}
+		goto transport2;
+	}
 
-			system("cls");
-
-			cout << "You arrive in Paris and the first thing you see is the Eiffel Tower in front of you." << endl;
-			Sleep(1000);
-			cout << "Impressed by its size and beauty, you want to learn more about its past and creator." << endl << endl;
-			Sleep(1000);
-
-			eiffelTower();
-
-			cout << "Speaking of, here's the first question!" << endl << endl;
-			Sleep(1000);
-
-			cout << "Continue";
-			
-			key = _getch();
-			system("cls");
-
-			franceQuestion1();
-
-			cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-			cout << "Balance: " << money << endl << endl;
-
-			key = _getch();
-
-			if (key == 'B' || key == 'b')
-			{
-				money += 25;
-				score += 200;
-
-				cout << "Correct!";
-
-				Sleep(1000);
-				system("cls");
-
-				franceNext1:
-
-				cout << "Great! Let's see your knowledge about rivers!" << endl << endl;
-
-				franceQuestion2();
-
-				cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-				cout << "Balance: " << money << endl << endl;
-
-				key = _getch();
-
-				if (key == 'C' || key == 'c')
-				{
-					money += 40;
-					score += 500;
-					
-					cout << "Correct!";
-					Sleep(1000);
-					system("cls");
-
-					franceNext2:
-
-					cout << "Let's look around Paris a bit more." << endl;
-					Sleep(1000);
-					cout << "Here's the Arc de Triomphe, another famous Parisian monument!" << endl << endl;
-					Sleep(1000);
-
-					cout << "Fun fact!" << endl << endl;
-					cout << "A giant elephant was almost built in its place! An architect, Charles Ribart" << endl;
-					cout << "had created plans to construct a giant elephant named L'elephant Triumphal." << endl;
-					Sleep(1000);
-					cout << "The construction of the elephant was ready to commence, but right before that," << endl;
-					cout << "the French government changed its mind and rejected the plan." << endl << endl;
-
-					cout << "Continue" << endl;
-					key = _getch();
-					system("cls");
-
-					arc();
-
-					cout << "Continue" << endl;
-					key = _getch();
-					system("cls");
-
-					cout << "Time for some rest, you grab a snack from a nearby cafe and book a room at a hotel (-15$)";
-					money -= 15;
-
-					cout << R"(
-         {
-      {   }
-       }_{ __{
-    .-{   }   }-.
-   (   }     {   )
-   |`-.._____..-'|
-   |             ;--.
-   |            (__  \
-   |             | )  )
-   |             |/  /
-   |             /  /    
-   |            (  /
-   \             y'
-    `-.._____..-'
-		 )" << '\n';
-
-					cout << "Continue" << endl;
-					key = _getch();
-					system("cls");
+	France();
+	system("cls");
 
 					transport3:
 
@@ -561,64 +725,13 @@ void game()
 
 						goto transport3;
 					}
-
+					
+					Spain();
 					system("cls");
 
-					cout << "Welcome to Madrid! Here's the first question!" << endl << endl;
-
-					spainQuestion1();
-
-					cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-					cout << "Balance: " << money << endl << endl;
-
-					key = _getch();
-
-					if (key == 'A' || key == 'a')
-					{
-						money += 50;
-						score += 500;
-
-						cout << "Correct!";
-
-						Sleep(1000);
-						system("cls");
-
-						spainNext1:
-
-						cout << "Great! Let's see your knowledge about Madrid's culture!" << endl << endl;
-
-						spainQuestion2();
-
-						cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-						cout << "Balance: " << money << endl << endl;
-
-						key = _getch();
-
-						if (key == 'B' || key == 'b')
-						{
-							money += 60;
-							score += 600;
-
-							cout << "Correct!";
-
-							Sleep(1000);
-							system("cls");
-
-							spainNext2:
-
-							cout << "Alright! After spending some time looking arond Madrid, it's time to take a nap" << endl;
-							cout << "and head for the next stop, Italy!(-20$)" << endl << endl;
-							money -= 20;
-
-							cout << "Continue" << endl;
-							key = _getch();
-							system("cls");
-
-							transport4:
-
-							cout << "Now, how should you travel to Italy ? " << endl << endl;
-							cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
-							cout << "Your balance: " << money << endl << endl;
+					cout << "Now, how should you travel to Italy ? " << endl << endl;
+					cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+					cout << "Your balance: " << money << endl << endl;
 
 							cin >> choice;
 
@@ -657,161 +770,10 @@ void game()
 								Sleep(1000);
 								system("cls");
 
-								goto transport4;
+								transport4:
 							}
 
 							system("cls");
-
-							cout << "Welcome to Italy! We'll be visiting Rome - Italy's capital and home to one of the most powerful empires in history!" << endl;
-							cout << "I bet you can't wait to explore and learn more about it, right?" << endl;
-
-							cout << R"(
-
-
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░    ▓▓████████████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ████████████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ████████████████████████
-▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓                      ██████████████████████████
-▓▓                                    ██████████████████████████
-▓▓                                  ████████████████████████████
-▓▓▓▓                            ████████████████████████████████
-                                ████████████████████████████████
-▓▓                              ▓▓██████████████████████████████
-▓▓                              ████████████████████████████████
-▓▓          ▓▓▓▓                ████████████████████████████████
-▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓              ██████████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ██████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ██████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒                      ██████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  ██████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                    ██
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                  
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ██████  
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ██████  
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ██████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ██████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓          ████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                ████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ██████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████████
-
-
-							)" << endl;
-
-							cout << "Continue";
-							key = _getch();
-							system("cls");
-
-							italyQuestion1();
-
-							cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-							cout << "Balance: " << money << endl << endl;
-
-							key = _getch();
-
-							if (key == 'C' || key == 'c')
-							{
-								money += 70;
-								score += 700;
-
-								cout << "Correct!";
-
-								Sleep(1000);
-								system("cls");
-
-								italyNext1:
-
-								cout << "Here's the bonus question, good luck!" << endl << endl;
-
-								italyQuestion2();
-
-								cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-								cout << "Balance: " << money << endl << endl;
-
-								key = _getch();
-
-								if(key == 'A' || key == 'a')
-								{
-									money += 85;
-									score += 900;
-									
-									cout << "Correct!";
-
-									Sleep(1000);
-									system("cls");
-
-									italyNext2:
-
-									cout << "Great! We should definitely check out the colosseum! Imagine how many" << endl;
-									cout << "emperors were changed while it was being built.";
-									cout << R"(
-
-			       
-              \\||      
-             ,'_,-\     
-             ;'____\    
-             || =\=|    
-             ||  - |                               
-         ,---'._--''-,,---------.--.----_,         
-        / `-._- _--/,,|  ___,,--'--'._<            
-       /-._,  `-.__;,,|'                           
-      /   ;\      / , ;                            
-     /  ,' | _ - ',/, ;
-    (  (   |     /, ,,;
-     \  \  |     ',,/,;
-      \  \ |    /, / ,;
-     (| ,^.|   / ,, ,/;
-      `-'./ `-._,, ,/,;
-           �-._ `-._,,;
-           |/,,`-._ `-.
-           |, ,;, ,`-._\
-
-
-									)" << endl;
-
-									cout << "Continue";
-									key = _getch();
-									system("cls");
-
-									cout << "You go to a nearby restaurant to try traditional Italian spaghetti. Tasty! (-25$)";
-									money -= 25;
-
-									cout << R"(
-
-                                                             |||
-                                                             |||||,
-                                                            \|||||/
-                           /)                               `|||||/
-                      ,-""//-. ______                       |`"""'|
-                   ==|`-.//.-'|,-----'======================|  P  |====
-                     |        |---,---,  .---,((--------.   |  A  |
-                     |        |  /(_)/  /   (()))` ;'", \   |  S  |
-                     `-.____.-' /_  /  /  /| `;',`;; ,/( \  |  T  |
-                               /(_)/  /  //  ; ` "  ((()) \ |  A  |
-                     .-::-.   /_  /  /  /)   "' ;" ; `;"'  \`-...-'
-                    (::::::) /(_)/   `=//==================='  
-                     `-::-' /   /     (/
-                 ----------'---'
-									)" << endl;
-									
-									cout << "Continue";
-									key = _getch();
-									system("cls");
-
-									transport5:
 
 									cout << "Next stop, Greece! How should we get there?" << endl << endl;
 									cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
@@ -854,143 +816,11 @@ void game()
 										Sleep(1000);
 										system("cls");
 
-										goto transport5;
+										transport5:
 									}
 
 									system("cls");
-
-									cout << "You arrive in Athens, Greece's capital. Astonished by the amount of monuments here, you decide to visit the most popular one." << endl;
-									cout << "Standing before the iconic Parthenon, you take some pictures to post in your social media accounts." << endl << endl;
-									cout << "Continue";
-									key = _getch();
-									system("cls");
-
-									greeceQuestion1();
-									cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-									cout << "Balance: " << money << endl << endl;
-
-									key = _getch();
-									if (key == 'C' || key == 'c')
-									{
-										money += 80;
-										score += 800;
-
-										cout << "Correct!";
-										Sleep(1000);
-										system("cls");
-									}
-
-									greeceNext1:
-
-									cout << "Here's the bonus question, good luck!";
-									Sleep(500);
-									system("cls");
-
-									greeceQuestion2();
-									cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
-									cout << "Balance: " << money << endl << endl;
-
-									key = _getch();
-
-									if (key == 'B' || key == 'b')
-									{
-										money += 100;
-										score += 950;
-
-										cout << "Correct!";
-										Sleep(1000);
-										system("cls");
-
-										greeceNext2:
-
-										cout << "Good job! Your knowledge of the greek mythology is amazing!" << endl;
-										cout << "You also visit the monument of the Alexander The Great - one of the most powerful leaders ever." << endl;
-										cout << R"(                
-														[]|    (______
-														[]|__ /       \
-														||   \________/
-														||      ___
-														||     /_  )__
-											__|\/)     ||   _/_ \____)
-										,----`     \     ||  />=o)
-										\_____      \    ||  \]__\
-											`--,_/U\  B|\__/===\
-												|UUUU\  ||_ _|_\_ \
-												|UUUUU\_|[,`_|__|_)
-												|UUUUUU\||__/_ __|
-												|UUUUUU/-(_\_____/-------,
-												/UU/    |H\__\    HHHH|   \\
-												|UU/    |H\  |HHHHHHH|    |\\\
-												UU      |HH\ \HHHHHHH|    | \\\
-												U       |<_\,_\HHHHHH|   /  \\\
-												\ (    |HHHHHHHHHHHHH   /  \\\\
-												\ \   |=============  /    \\\\\
-													\ |             | |
-										)";
-
-										transport6:
-									}
-								}
-								else
-								{
-									cout << "Wrong! ";
-									cout << money;
-
-									Sleep(1000);
-									system("cls");
-
-									goto italyNext2;
-								}
-							}
-							else
-							{
-								cout << "Wrong! ";
-								cout << money;
-
-								Sleep(1000);
-								system("cls");
-
-								goto italyNext1;
-							}
-						}
-						else
-						{
-							cout << "Wrong!";
-							Sleep(1000);
-							system("cls");
-
-							goto spainNext2;
-						}
-					}
-					else
-					{
-						cout << "Wrong!";
-
-						Sleep(1000);
-						system("cls");
-
-						goto spainNext1;
-					}
-				}
-				else
-				{
-					cout << "Wrong!";
-					Sleep(1000);
-					system("cls");
-
-					goto franceNext2;
-				}
-			}
-			else
-			{
-				cout << "Wrong!";
-
-				Sleep(1000);
-				system("cls");
-				
-				goto franceNext1;
-			}
-		}
+	}
 	
 
 
