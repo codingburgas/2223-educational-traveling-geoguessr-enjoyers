@@ -579,6 +579,80 @@ void Italy()
 	}
 }
 
+void Greece()
+{
+	cout << "You arrive in Athens, Greece's capital. Astonished by the amount of monuments here, you decide to visit the most popular one." << endl;
+	cout << "Standing before the iconic Parthenon, you take some pictures to post in your social media accounts." << endl << endl;
+	cout << "Continue";
+	key = _getch();
+	system("cls");
+
+	greeceQuestion1();
+	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+	cout << "Balance: " << money << endl << endl;
+
+	key = _getch();
+	if (key == 'C' || key == 'c')
+	{
+		money += 80;
+		score += 800;
+
+		cout << "Correct!";
+		Sleep(1000);
+		system("cls");
+	}
+
+	greeceNext1:
+
+	cout << "Here's the bonus question, good luck!";
+	Sleep(500);
+	system("cls");
+
+	greeceQuestion2();
+	cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+	cout << "Balance: " << money << endl << endl;
+
+	key = _getch();
+
+	if (key == 'B' || key == 'b')
+	{
+		money += 100;
+		score += 950;
+
+		cout << "Correct!";
+		Sleep(1000);
+		system("cls");
+
+	greeceNext2:
+
+		cout << "Good job! Your knowledge of the greek mythology is amazing!" << endl;
+		cout << "You also visit the monument of the Alexander The Great - one of the most powerful leaders ever." << endl;
+		cout << R"(                
+														[]|    (______
+														[]|__ /       \
+														||   \________/
+														||      ___
+														||     /_  )__
+											__|\/)     ||   _/_ \____)
+										,----`     \     ||  />=o)
+										\_____      \    ||  \]__\
+											`--,_/U\  B|\__/===\
+												|UUUU\  ||_ _|_\_ \
+												|UUUUU\_|[,`_|__|_)
+												|UUUUUU\||__/_ __|
+												|UUUUUU/-(_\_____/-------,
+												/UU/    |H\__\    HHHH|   \\
+												|UU/    |H\  |HHHHHHH|    |\\\
+												UU      |HH\ \HHHHHHH|    | \\\
+												U       |<_\,_\HHHHHH|   /  \\\
+												\ (    |HHHHHHHHHHHHH   /  \\\\
+												\ \   |=============  /    \\\\\
+													\ |             | |
+										)";
+	transport6:
+	}
+}
+
 void game()
 {
 	cout << "After saving up enough money, you decide to explore different countries in Europe." << endl << endl;
@@ -679,152 +753,151 @@ void game()
 	France();
 	system("cls");
 
-					transport3:
+	transport3:
 
-					cout << "Let's keep going! Now traveling to Spain. But how exactly?" << endl << endl;
-					cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
-					cout << "Your balance: " << money << endl << endl;
+	cout << "Let's keep going! Now traveling to Spain. But how exactly?" << endl << endl;
+	cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+	cout << "Your balance: " << money << endl << endl;
 
-					cin >> choice;
+	cin >> choice;
 
 
-					if (choice == 1 && money >= 100)
-					{
-						multiplier += 1.5;
-						money -= 100;
-					}
-					else if (choice == 2 && money >= 150)
-					{
-						multiplier += 2;
-						money -= 150;
-					}
-					else if (choice == 3 && money >= 50)
-					{
-						money -= 50;
-					}
-					else if (money < 50)
-					{
-						cout << endl;
-						cout << "You're out of money and can't progress further!" << endl << endl;
-
-						cout << "Continue";
-						key = _getch();
-						system("cls");
-
-						gameOver();
-
-						cout << "Score: " << score * multiplier;
-
-						exit(EXIT_SUCCESS);
-					}
-					else
-					{
-						cout << "Not enough money or wrong input!";
-						Sleep(1000);
-						system("cls");
-
-						goto transport3;
-					}
-					
-					Spain();
-					system("cls");
-
-					cout << "Now, how should you travel to Italy ? " << endl << endl;
-					cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
-					cout << "Your balance: " << money << endl << endl;
-
-							cin >> choice;
-
-							if (choice == 1 && money >= 100)
-							{
-								multiplier += 1.5;
-								money -= 100;
-							}
-							else if (choice == 2 && money >= 150)
-							{
-								multiplier += 2;
-								money -= 150;
-							}
-							else if (choice == 3 && money >= 50)
-							{
-								money -= 50;
-							}
-							else if (money < 50)
-							{
-								cout << endl;
-								cout << "You're out of money and can't progress further!" << endl << endl;
-
-								cout << "Continue";
-								key = _getch();
-								system("cls");
-
-								gameOver();
-
-								cout << "Score: " << score * multiplier;
-
-								exit(EXIT_SUCCESS);
-							}
-							else
-							{
-								cout << "Not enough money or wrong input!";
-								Sleep(1000);
-								system("cls");
-
-								transport4:
-							}
-
-							system("cls");
-
-									cout << "Next stop, Greece! How should we get there?" << endl << endl;
-									cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
-									cout << "Your balance: " << money << endl << endl;
-
-									cin >> choice;
-
-									if (choice == 1 && money >= 100)
-									{
-										multiplier += 1.5;
-										money -= 100;
-									}
-									else if (choice == 2 && money >= 150)
-									{
-										multiplier += 2;
-										money -= 150;
-									}
-									else if (choice == 3 && money >= 50)
-									{
-										money -= 50;
-									}
-									else if (money < 50)
-									{
-										cout << endl;
-										cout << "You're out of money and can't progress further!" << endl << endl;
-
-										cout << "Continue";
-										key = _getch();
-										system("cls");
-
-										gameOver();
-
-										cout << "Score: " << score * multiplier;
-
-										exit(EXIT_SUCCESS);
-									}
-									else
-									{
-										cout << "Not enough money or wrong input!";
-										Sleep(1000);
-										system("cls");
-
-										transport5:
-									}
-
-									system("cls");
+	if (choice == 1 && money >= 100)
+	{
+	multiplier += 1.5;
+	money -= 100;
 	}
+	else if (choice == 2 && money >= 150)
+	{
+	multiplier += 2;
+	money -= 150;
+	}
+	else if (choice == 3 && money >= 50)
+	{
+	money -= 50;
+	}
+	else if (money < 50)
+	{
+	cout << endl;
+	cout << "You're out of money and can't progress further!" << endl << endl;
+
+	cout << "Continue";
+	key = _getch();
+	system("cls");
+
+	gameOver();
+
+	cout << "Score: " << score * multiplier;
+
+	exit(EXIT_SUCCESS);
+	}
+	else
+	{
+	cout << "Not enough money or wrong input!";
+	Sleep(1000);
+	system("cls");
+
+	goto transport3;
+	}
+
+	Spain();
+	system("cls");
+
+	cout << "Now, how should you travel to Italy ? " << endl << endl;
+	cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+	cout << "Your balance: " << money << endl << endl;
+
+	cin >> choice;
+
+	if (choice == 1 && money >= 100)
+	{
+		multiplier += 1.5;
+		money -= 100;
+	}
+	else if (choice == 2 && money >= 150)
+	{
+		multiplier += 2;
+		money -= 150;
+	}
+	else if (choice == 3 && money >= 50)
+	{
+		money -= 50;
+	}
+	else if (money < 50)
+	{
+		cout << endl;
+		cout << "You're out of money and can't progress further!" << endl << endl;
+
+		cout << "Continue";
+		key = _getch();
+		system("cls");
+
+		gameOver();
+
+		cout << "Score: " << score * multiplier;
+
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		cout << "Not enough money or wrong input!";
+		Sleep(1000);
+		system("cls");
+
+		transport4:
+	}
+
+	Italy();
+	system("cls");
+
+	cout << "Next stop, Greece! How should we get there?" << endl << endl;
+	cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
+	cout << "Your balance: " << money << endl << endl;
+
+	cin >> choice;
+
+	if (choice == 1 && money >= 100)
+	{
+		multiplier += 1.5;
+		money -= 100;
+	}
+	else if (choice == 2 && money >= 150)
+	{
+		multiplier += 2;
+		money -= 150;
+	}
+	else if (choice == 3 && money >= 50)
+	{
+		money -= 50;
+	}
+	else if (money < 50)
+	{
+		cout << endl;
+		cout << "You're out of money and can't progress further!" << endl << endl;
+
+		cout << "Continue";
+		key = _getch();
+		system("cls");
+
+		gameOver();
+
+		cout << "Score: " << score * multiplier;
+
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		cout << "Not enough money or wrong input!";
+		Sleep(1000);
+		system("cls");
+
+		transport5:
+	}
+
+	Greece();
+	system("cls");
+}
 	
-
-
-
 int main()
 {
 	
