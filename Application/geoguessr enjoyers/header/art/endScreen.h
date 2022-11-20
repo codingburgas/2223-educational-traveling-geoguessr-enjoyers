@@ -1,6 +1,6 @@
 void endScreen()
 {
-    cout << "R(
+    cout << R"(
    _____                            _         _       _   _                 
   / ____|                          | |       | |     | | (_)                
  | |     ___  _ __   __ _ _ __ __ _| |_ _   _| | __ _| |_ _  ___  _ __  ___ 
@@ -11,5 +11,5 @@ void endScreen()
                     |___/                                                   
     )" << endl << endl;
     cout << "You win!" << endl;
-    cout << "Final score: " << score;
+    
 }

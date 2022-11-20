@@ -27,7 +27,6 @@
 #include "header/questions/Greece/greeceQuestion2.h"
 #include "header/questions/Belgium/belgiumQuestion1.h"
 #include "header/questions/Belgium/belgiumQuestion2.h"
-#include "header/art/endScreen.h"
 
 using namespace std;
 
@@ -155,7 +154,7 @@ void Germany()
 			cout << "While looking around Berlin, you take photos of the famous Brandenburg monument and go sightseeing a bit more." << endl;
 
 			cout << R"(
-		 o#######o
+	
        o###########o
       o#############o
      #################
@@ -532,24 +531,6 @@ void Italy()
 
 				cout << "You go to a nearby restaurant to try traditional Italian spaghetti. Tasty! (-25$)";
 				money -= 25;
-
-				cout << R"(
-
-															 |||
-															|||||,
-														   \|||||/
-						/)                                 `|||||/
-					 ,-""//-. ______                       |`"""'|
-				  ==|`-.//.-'|,-----'======================|  P  |====
-					|        |---,---,  .---,((--------.   |  A  |
-					|        |  /(_)/  /   (()))` ;'", \   |  S  |
-					`-.____.-' /_  /  /  /| `;',`;; ,/( \  |  T  |
-							  /(_)/  /  //  ; ` "  ((()) \ |  A  |
-					.-::-.   /_  /  /  /)   "' ;" ; `;"'  \`-...-'
-				(::::::) /(_)/   `=//==================='  
-					`-::-' /   /     (/
-				----------'---'
-				)" << endl;
 				
 				cout << "Continue";
 				key = _getch();
@@ -845,12 +826,12 @@ void game()
 	if (choice == 1 && money >= 100)
 	{
 		multiplier += 1.5;
-		money -= 100;
+		money -= 75;
 	}
 	else if (choice == 2 && money >= 150)
 	{
 		multiplier += 2;
-		money -= 150;
+		money -= 100;
 	}
 	else if (choice == 3 && money >= 50)
 	{
@@ -885,7 +866,7 @@ void game()
 
 	transport4:
 
-	cout << "Now, how should you travel to Italy ? " << endl << endl;
+	cout << "Now, how should you travel to Italy? " << endl << endl;
 	cout << "1. Train(75$ 1.5x score)   2. Car (100$ 2x score)   3. Airplane (50$, no multiplier)" << endl << endl;
 	cout << "Your balance: " << money << endl << endl;
 
@@ -894,12 +875,12 @@ void game()
 	if (choice == 1 && money >= 100)
 	{
 		multiplier += 1.5;
-		money -= 100;
+		money -= 75;
 	}
 	else if (choice == 2 && money >= 150)
 	{
 		multiplier += 2;
-		money -= 150;
+		money -= 100;
 	}
 	else if (choice == 3 && money >= 50)
 	{
@@ -943,12 +924,12 @@ void game()
 	if (choice == 1 && money >= 100)
 	{
 		multiplier += 1.5;
-		money -= 100;
+		money -= 75;
 	}
 	else if (choice == 2 && money >= 150)
 	{
 		multiplier += 2;
-		money -= 150;
+		money -= 100;
 	}
 	else if (choice == 3 && money >= 50)
 	{
@@ -991,12 +972,12 @@ void game()
 	if (choice == 1 && money >= 100)
 	{
 		multiplier += 1.5;
-		money -= 100;
+		money -= 75;
 	}
 	else if (choice == 2 && money >= 150)
 	{
 		multiplier += 2;
-		money -= 150;
+		money -= 100;
 	}
 	else if (choice == 3 && money >= 50)
 	{
@@ -1029,6 +1010,7 @@ void game()
 	system("cls");
 
 	endScreen();
+	cout << "Final score: " << score;
 }
 	
 int main()
