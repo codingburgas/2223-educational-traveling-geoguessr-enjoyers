@@ -22,6 +22,8 @@
 #include "header/questions/Spain/spainQuestion2.h"
 #include "header/questions/Italy/italyQuestion1.h"
 #include "header/questions/Italy/italyQuestion2.h"
+#include "header/questions/Greece/greeceQuestion1.h"
+#include "header/questions/Greece/greeceQuestion2.h"
 
 using namespace std;
 
@@ -743,6 +745,77 @@ void game()
 
 									system("cls");
 
+									cout << "You arrive in Athens, Greece's capital. Astonished by the amount of monuments here, you decide to visit the most popular one." << endl;
+									cout << "Standing before the iconic Parthenon, you take some pictures to post in your social media accounts." << endl << endl;
+									cout << "Continue";
+									key = _getch();
+									system("cls");
+
+									greeceQuestion1();
+									cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+									cout << "Balance: " << money << endl << endl;
+
+									key = _getch();
+									if (key == 'C' || key == 'c')
+									{
+										money += 80;
+										score += 800;
+
+										cout << "Correct!";
+										Sleep(1000);
+										system("cls");
+									}
+
+									greeceNext1:
+
+									cout << "Here's the bonus question, good luck!";
+									Sleep(500);
+									system("cls");
+
+									greeceQuestion2();
+									cout << "Your score: " << score * multiplier << " " << multiplier << "x" << endl << endl;
+									cout << "Balance: " << money << endl << endl;
+
+									key = _getch();
+
+									if (key == 'B' || key == 'b')
+									{
+										money += 100;
+										score += 950;
+
+										cout << "Correct!";
+										Sleep(1000);
+										system("cls");
+
+										greeceNext2:
+
+										cout << "Good job! Your knowledge of the greek mythology is amazing!" << endl;
+										cout << "You also visit the monument of the Alexander The Great - one of the most powerful leaders ever." << endl;
+										cout << R"(                
+														[]|    (______
+														[]|__ /       \
+														||   \________/
+														||      ___
+														||     /_  )__
+											__|\/)     ||   _/_ \____)
+										,----`     \     ||  />=o)
+										\_____      \    ||  \]__\
+											`--,_/U\  B|\__/===\
+												|UUUU\  ||_ _|_\_ \
+												|UUUUU\_|[,`_|__|_)
+												|UUUUUU\||__/_ __|
+												|UUUUUU/-(_\_____/-------,
+												/UU/    |H\__\    HHHH|   \\
+												|UU/    |H\  |HHHHHHH|    |\\\
+												UU      |HH\ \HHHHHHH|    | \\\
+												U       |<_\,_\HHHHHH|   /  \\\
+												\ (    |HHHHHHHHHHHHH   /  \\\\
+												\ \   |=============  /    \\\\\
+													\ |             | |
+										)";
+
+										transport6:
+									}
 								}
 								else
 								{
